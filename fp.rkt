@@ -32,7 +32,7 @@
 ;2--------------------------------------------------------------------------------------------------------------------------------------------
 
 (define (sum-up-numbers-simple L) ;defines a function called "sum-up-numbers-simple" that takes in paremeter "L" or list
-  (cond ((null? L) 0) 'conditional statement that checks if the list is null or not
+  (cond ((null? L) 0) ;conditional statement that checks if the list is null or not
     ((number? (car L)) ;is the element being checked a number or an element?
          (+ (car L) (sum-up-numbers-simple (cdr L))) ;performs math on the elements depending on if a letter or a number
     (else (+ 0 (sum-up-numbers-simple (cdr L)))) ;the result is 0 because its not a number
@@ -40,3 +40,12 @@
 
 ;3--------------------------------------------------------------------------------------------------------------------------------------------
 
+(define (sum-up-numbers-general L) ;defines a function called "sum-up-numbers-general" that takes in paremeter "L" or list
+  (cond ((null? L) 0) ;conditional statement that checks if the list is null or not
+      ((number? (car L)) ;is the element being checked a number or an element?
+         (cond ((not (list? (car L))) ;is the element being checked is a list or not
+            (+ 0 (sum-up-numbers-general (cdr L))) ;add 0 if not a number
+         )
+            (else (+ (sum-up-numbers-general (car L)) (sum-up-numbers-general (cdr L)))) ;calls rest of list
+  )))
+)
