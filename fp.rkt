@@ -20,3 +20,23 @@
 ;the smallest number in L2. If there is no number in L2, all the numbers in L1 should be used to calculate the minimum. 
 ;If there is no number in L1 larger than the smallest number in L2, the result is false (#F). 
 ;For example, the result of (min-above-min ‘(2 a 1 3) ‘(b 5 3 1)) should be 2.
+
+
+;1.-------------------------------------------------------------------------------------------------------------------------------------------
+
+(define(reverse-general L)
+  (if (null? L))
+    (else append (reverse-general(cdr L)) (list (car L)))
+)
+
+;2--------------------------------------------------------------------------------------------------------------------------------------------
+
+(define (sum-up-numbers-simple L)
+  (cond ((null? L) 0)
+    ((number? (car L))
+         (+ (car L) (sum-up-numbers-simple (cdr L)))
+    (else (+ 0 (sum-up-numbers-simple (cdr L))))
+))
+
+;3--------------------------------------------------------------------------------------------------------------------------------------------
+
