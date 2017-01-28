@@ -49,3 +49,8 @@
             (else (+ (sum-up-numbers-general (car L)) (sum-up-numbers-general (cdr L)))) ;calls rest of list
   )))
 )
+
+;4--------------------------------------------------------------------------------------------------------------------------------------------
+
+(define (min-above-min L1 L2) ;defines a function called "min-above-min" that takes in two lists as paremeters entitled "L1" & "L2"
+  
