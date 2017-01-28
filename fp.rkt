@@ -24,18 +24,18 @@
 
 ;1.-------------------------------------------------------------------------------------------------------------------------------------------
 
-(define(reverse-general L)
-  (if (null? L))
-    (else append (reverse-general(cdr L)) (list (car L)))
+(define(reverse-general L) ;defines a function called "reverse-general" that takes in parameter "L" or list 
+  (if (null? L)) ;if else function which will return true or false if the list "L" is empty or not
+    (else append (reverse-general(cdr L)) (list (car L))) ;else statement within function that returns the first parameter list with the second parameter list
 )
 
 ;2--------------------------------------------------------------------------------------------------------------------------------------------
 
-(define (sum-up-numbers-simple L)
-  (cond ((null? L) 0)
-    ((number? (car L))
-         (+ (car L) (sum-up-numbers-simple (cdr L)))
-    (else (+ 0 (sum-up-numbers-simple (cdr L))))
+(define (sum-up-numbers-simple L) ;defines a function called "sum-up-numbers-simple" that takes in paremeter "L" or list
+  (cond ((null? L) 0) 'conditional statement that checks if the list is null or not
+    ((number? (car L)) ;is the element being checked a number or an element?
+         (+ (car L) (sum-up-numbers-simple (cdr L))) ;performs math on the elements depending on if a letter or a number
+    (else (+ 0 (sum-up-numbers-simple (cdr L)))) ;the result is 0 because its not a number
 ))
 
 ;3--------------------------------------------------------------------------------------------------------------------------------------------
